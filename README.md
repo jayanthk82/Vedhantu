@@ -3,11 +3,17 @@ Digital Brain is an application designed to assist learners preparing for compet
 
 
 🚀 Key Features
+
 • Multi-Modal Input: Users can quickly store formulas, facts, or notes by typing, speaking, or taking a photo of their notebook.
+
 • Automated Spaced Repetition: The system fights memory decay by sending automated phone notifications at specific critical intervals: 1 day, 3 days, 7 days, and 15 days after learning.
+
 • Interactive Testing: Users can respond to revision prompts via chat-style typing, Multiple Choice Questions (MCQs), or voice commands.
+
 • Adaptive Scheduling: If a user answers correctly, the next review is pushed to a later date; if they answer incorrectly, the app schedules the next prompt sooner to ensure mastery.
+
 ⚠️ Project Status
+
 This project is currently in the development phase for a full product launch.
 
 --------------------------------------------------------------------------------
