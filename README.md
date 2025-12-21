@@ -1,5 +1,7 @@
 # Vedhantu
 Digital Brain is an application designed to assist learners preparing for competitive exams like JEE MAINS, GATE, and interviews by solving the problem of forgetting crucial information. Acting as a "robot tutor who never sleeps," the app manages the documentation and revision process to ensure 100% retention.
+
+
 🚀 Key Features
 • Multi-Modal Input: Users can quickly store formulas, facts, or notes by typing, speaking, or taking a photo of their notebook.
 • Automated Spaced Repetition: The system fights memory decay by sending automated phone notifications at specific critical intervals: 1 day, 3 days, 7 days, and 15 days after learning.
