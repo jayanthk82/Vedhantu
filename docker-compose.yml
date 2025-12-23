@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # SERVICE 1: The Database
+  mongodb:
+    image: mongo:6.0
+    container_name: vedhaflow_db
+    restart: always
+    ports:
+      - "27017:27017"  # Allows tools like Compass to connect from Windows
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+    volumes:
+      - mongo_data:/data/db  # <--- CRITICAL: This saves your data if Docker restarts
+
+  # SERVICE 2: The Web Server (Reverse Proxy)
+  nginx:
+    image: nginx:alpine
+    container_name: vedhaflow_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      # 1. THE BRAIN: Map your custom config file (CRITICAL MISSING PIECE)
+      # I am assuming your file is in a folder named 'nginx' based on previous chats.
+      # If it's in the root, change to: - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+
+      # 2. THE DATA: Map the uploads folder
+      # Suggestion: Use "./" instead of "${PWD}" for better Windows compatibility
+      - ./app/static/uploads:/usr/share/nginx/html/uploads
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - mongodb
+
+# Define the persistent storage
+volumes:
+  mongo_data:
